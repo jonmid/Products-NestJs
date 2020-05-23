@@ -6,10 +6,14 @@ import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/products-db', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }),
+    // mongodb://localhost/products-db
+    MongooseModule.forRoot(
+      'mongodb+srv://jmproduct:7XP9DnJDF0I0EuVm@cluster0-bgoon.mongodb.net/test?retryWrites=true&w=majority',
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      },
+    ),
     ProductModule,
   ],
   controllers: [AppController],
